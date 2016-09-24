@@ -1,0 +1,15 @@
+﻿﻿{
+  "base":{
+    "logo":"/assets/images/logo.png"
+  },
+  "admin":{
+    "userName":"用户名:",
+    "password":"密码:",
+    "phone":"手机:",
+    "nickName":"昵称:",
+    "email":"Email:",
+    "authorityLevel":"权限:",
+    "submitButton":"提交",
+    "getAdminList":"获取管理员列表"
+  }
+}

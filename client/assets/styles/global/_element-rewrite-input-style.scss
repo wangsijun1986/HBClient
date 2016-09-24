@@ -1,0 +1,19 @@
+input[type=checkbox]{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-top: 0;
+  opacity: 0;
+  position: relative;
+  left: 20px;
+  top: -2px;
+}
+input[type=checkbox]+label {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background-image: url(/assets/images/checkbox_small.png);
+}
+input[type=checkbox]:checked+label {
+  background-image: url(/assets/images/checkbox_small_checked.png);
+}

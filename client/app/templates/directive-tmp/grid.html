@@ -1,0 +1,78 @@
+<div class="hb-grid">
+    <div class="hb-header">
+        <span class="hb-title">
+            {{grid.title}}
+        </span>
+    </div>
+    <div class="hb-body">
+        <table class="table table-bordered table-condensed">
+            <thead>
+            <tr>
+                <th ng-if="grid['selectorRowAll']">
+                    <span>
+                        <input type="checkbox" ng-model="grid['selectedRowAll']" ng-checked="grid['selectedRowAll']" ng-change="grid.changeAll('selectorRowAll')"/>
+                    </span>
+                </th>
+                <th ng-repeat="header in grid.header" ng-click="header.sort?grid.sortColumn(header):null" ng-style="header.style" ng-if="!header.hidden">
+                    <div class="header-title">{{header.title}}
+                        <span ng-if="header.sortShow" class="grid-sort">
+                            <i ng-class="header.sortType=='asc'?'asc':'asc-none'"></i>
+                            <i ng-calss="header.sortType=='desc'?'desc':'desc-none'"></i>
+                        </span>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in grid.module" id="item['Id']">
+                <td ng-if="grid['selectorRowAll']">
+                    <span>
+                        <input type="checkbox" ng-model="item['selected']" ng-checked="item['selected']" ng-change="grid.changeAll(item)" />
+                    </span>
+                </td>
+                <td ng-repeat="cell in grid.cells" ng-class="'text-'+cell['align']" ng-if="!cell['hidden']">
+                    <span ng-if="!item.edit">
+                        <span ng-if="cell['index']=='act'">
+                            <button class="btn btn-xs btn-default" ng-click="grid.editRow(item)">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btn btn-xs btn-default" ng-click="grid.deleteRow(item)">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </span>
+                        <span ng-if="cell['type']!='checkbox'&&cell['type']!='dropdown'">{{item[cell['index']]}}</span>
+                        <span ng-if="cell['type']=='dropdown'">{{item[cell['index']].name}}</span>
+                        <span ng-if="cell['type']=='checkbox'">
+                            <input type="checkbox" disabled="disabled" ng-model="item[cell['index']]" ng-change="grid.changeCheckbox(item[cell['index']])" ng-checked="item[cell['index']]"/>
+                        </span>
+                    </span>
+                    <span ng-if="item.edit">
+                        <span ng-if="cell['index']=='act'">
+                            <button class="btn btn-xs btn-default" ng-click="grid.saveRow(item)">
+                                <i class="fa fa-save"></i>
+                            </button>
+                            <button class="btn btn-xs btn-default" ng-click="grid.cleanRow(item)">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </span>
+                        <span ng-if="cell['type']=='checkbox'">
+                            <input type="checkbox" ng-disabled="!cell['edit']" ng-model="item[cell['index']]" ng-change="grid.changeCheckbox(item[cell['index']])" ng-checked="item[cell['index']]"/>
+                        </span>
+                        <span ng-if="cell['type']=='dropdown'">
+                            <span ng-if="!cell['edit']">{{item[cell['index']].name}}</span>
+                            <dropdown-list ng-if="cell['edit']" data="cell['dropdownList']" set-default-value="item[cell['index']].value" get-value="item[cell['index']].value" but-size="xs"></dropdown-list>
+                        </span>
+                        <span ng-if="cell['type']!='dropdown'&&cell['type']!='checkbox'">
+                            <span ng-if="!cell['edit']">{{item[cell['index']]}}</span>
+                            <input type="text" ng-if="cell['edit']" ng-model="item[cell['index']]" value="item[cell['index']]" />
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="hb-footer">
+        <a ng-click="grid.getRowsData()">获取追加的测试数据</a>
+    </div>
+</div>

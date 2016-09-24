@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="HB">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title ng-bind="title"></title>
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/node_modules/angular-ui-grid/ui-grid.min.css" rel="stylesheet" />
+    <link href="/assets/styles/styles.css" rel="stylesheet" />
+</head>
+<body ng-controller="appController as app" ng-class="app.isAuthentication?'':'body-login'">
+    <div ng-cloak ng-if="app.isAuthentication">
+        <div ng-include="'/app/templates/menu/menu.html'"></div>
+        <div ng-include="'/app/templates/header/header.html'"></div>
+        <div ng-include="'/app/templates/filter/filter.html'" ng-if="app.friends"></div>
+    </div>
+    <div ng-class="app.widescreen?'container-fluid':'container-fluid-mini'" ng-cloak>
+        <div ng-class="app.isAuthentication?'view-main view-main-gray':'view-main'" ui-view></div>
+    </div>
+
+    <!-- jQuery + Bootstrap + Angular -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-cookies/angular-cookies.js"></script>
+
+    <script src="/node_modules/underscore/underscore-min.js"></script>
+    <script src="/node_modules/angular-filter/dist/angular-filter.min.js"></script>
+
+    <!-- Angular de facto router -->
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- UI Grid -->
+    <script src="/node_modules/angular-ui-grid/ui-grid.js"></script>
+
+    <!-- UI Boostrap -->
+    <script src="/node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!-- async -->
+    <script src="/node_modules/async/dist/async.js"></script>
+
+    <!-- Utilities -->
+    <script src="/node_modules/restangular/dist/restangular.js"></script>
+    <!-- Moment (Date Translation) -->
+    <script src="/node_modules/moment/moment.js"></script>
+    <script src="/node_modules/angular-moment/angular-moment.js"></script>
+    <script src="/node_modules/moment/locale/pt.js"></script>
+    <!--<script src="/node_modules/angular-translate/dist/angular-translate.js"></script>-->
+
+    <!-- Config files -->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.config.js"></script>
+    <script src="/app/config.js"></script>
+    <!-- Core -->
+    <script src="/app/core/baseServer.js"></script>
+    <script src="/app/core/restServer.js"></script>
+    <script src="/app/filters/transactionsFilter.js"></script>
+    <!-- Service -->
+    <script src="/app/service/baseService.js"></script>
+    <script src="/app/service/requestService.js"></script>
+    <script src="/app/service/adminService.js"></script>
+    <script src="/app/service/navigationService.js"></script>
+    <!-- Directive -->
+    <script src="/app/directive/navMenuList.directive.js"></script>
+    <script src="/app/directive/dropdownList.directive.js"></script>
+    <script src="/app/directive/grid.directive.js"></script>
+    <!-- Controller -->
+    <script src="/app/components/base/baseController.js"></script>
+    <script src="/app/components/menu/menuController.js"></script>
+    <script src="/app/components/header/headerController.js"></script>
+    <script src="/app/components/login/loginController.js"></script>
+    <script src="/app/components/panel/panelController.js"></script>
+    <script src="/app/components/panel/menuSettingsController.js"></script>
+    <script src="/app/components/panel/permissionSettingsController.js"></script>
+    <script src="/app/components/panel/adminSettingsController.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<nav class="nav-bar" ng-controller="menuController as menu">
+    <div ng-class="menu.widescreen?'nav-menu':'nav-mini'">
+        <div class="logo">
+            <img src="{{ 'base.logo' | transactions }}" />
+        </div>
+        <nav-menu-list data="menu.menuList"></nav-menu-list>
+    </div>
+</nav>

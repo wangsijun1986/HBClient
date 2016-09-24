@@ -1,0 +1,17 @@
+@import "./colors.scss";
+
+.border-black-gray{
+  border:1px solid $black-gray-border;
+}
+.border-left-black-gray{
+  border-left:1px solid $black-gray-border;
+}
+.border-bottom-black-gray{
+  border-bottom:1px solid $black-gray-border;
+}
+.border-top-black-gray{
+  border-top:1px solid $black-gray-border;
+}
+.border-right-black-gray{
+  border-right:1px solid $black-gray-border;
+}

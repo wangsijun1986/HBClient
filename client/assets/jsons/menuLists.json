@@ -1,0 +1,27 @@
+{
+  "menuData" :[
+    {
+        "name":"系统设置",
+        "iconType":"class",
+        "iconClass":"fa fa-cog",
+        "iconImage":"",
+        "link":"panel",
+        "active":true,
+        "child":[
+          {
+            "name":"目录设置",
+            "link":"panel.menu",
+            "active":true
+          },
+          {
+            "name":"权限设置",
+            "link":"panel.permission"
+          },
+          {
+            "name":"管理员设置",
+            "link":"panel.admin"
+          }
+        ]
+    }
+  ]
+}

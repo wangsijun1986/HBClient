@@ -1,0 +1,85 @@
+@import "./_colors.scss";
+
+$header-background-start:#fefefe;
+$header-background-end:#efefef;
+$header-title:#333;
+$grid-header-background:#fafafa;
+$grid-header-bottom:#bebebe;
+$grid-footer-top:#d3d3d3;
+.hb-grid{
+  margin-bottom: 20px;
+  .hb-header{
+    border-left:1px solid $grid-border;
+    border-top:1px solid $grid-border;
+    border-right: 1px solid $grid-border;
+    border-bottom: 1px solid $grid-header-bottom;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    padding: 10px 13px;
+    background-color: $header-background-start;
+    background-image: -moz-linear-gradient(top,$header-background-start,$header-background-end);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from($header-background-start),to($header-background-end));
+    background-image: -webkit-linear-gradient(top,$header-background-start,$header-background-end);
+    background-image: -o-linear-gradient(top,$header-background-start,$header-background-end);
+    background-image: linear-gradient(to bottom,$header-background-start,$header-background-end);
+    background-repeat: repeat-x;
+    .hb-title{
+      font-size:15px;
+      font-weight: 700;
+      color:$header-title;
+      vertical-align: middle;
+    }
+  }
+  .hb-body{
+    background: $white;
+    table{
+      margin-bottom: 0;
+    }
+    th{
+      background: $grid-header-background;
+      border-color:$grid-border;
+      border-bottom: none;
+      font-size: 12px;
+      >.header-title{
+        text-alian:center;
+      }
+      &.grid-sort{
+
+      }
+      span{
+        input[type=checkbox]{
+          opacity:1;
+          width: 14px;
+          position: inherit;
+        }
+      }
+    }
+    td{
+      border-color:$grid-border;
+      span{
+        button{
+          i.fa{
+            font-size: 13px;
+            vertical-align: middle;
+          }
+        }
+        input[type=checkbox]{
+          opacity:1;
+          width: 14px;
+          position: inherit;
+        }
+      }
+    }
+  }
+  .hb-footer{
+    border-left:1px solid $grid-border;
+    border-bottom:1px solid $grid-border;
+    border-right: 1px solid $grid-border;
+    border-top:1px solid $grid-footer-top;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    padding: 10px 13px;
+  }
+}

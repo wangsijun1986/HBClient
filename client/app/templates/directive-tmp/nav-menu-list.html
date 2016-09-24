@@ -1,0 +1,14 @@
+<div class="nav-menu-list">
+    <ul>
+        <li ng-repeat="item in navList.data">
+            <a ng-click="navList.operateMenuList($event)" ng-if="item.child" ng-class="item.active?'active':''"><i ng-class="item.iconClass"></i><span>{{item.name}}</span></a>
+            <a ng-click="navList.goState(item.link)" ng-if="!item.child" ng-class="item.active?'active':''"><i ng-class="item.iconClass"></i><span>{{item.name}}</span></a>
+            <ul ng-if="item.child" ng-class="item.active?'childMenu open':'childMenu'">
+                <li ng-repeat="list in item.child" ng-class="list.active?'active':''"><a ng-click="navList.goState(list)">{{list.name}}</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="rescroll-bar">
+        <div class="rescroll-bar-handle"></div>
+    </div>
+</div>

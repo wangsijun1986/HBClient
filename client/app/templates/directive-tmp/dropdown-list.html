@@ -1,0 +1,12 @@
+<div ng-class="dropdown.open?'btn-group open':'btn-group'">
+    <button class="btn btn-default {{dropdown.butSize?'btn-'+dropdown.butSize:''}} dropdown-toggle"  type="button" ng-model="dropdown.value" ng-click="dropdown.open=!dropdown.open">
+        {{dropdown.name}}
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li ng-repeat="item in dropdown.data" ng-click="dropdown.Selected(item.value)">
+            <a tabindex="-1">{{item.name}}</a>
+        </li>
+    </ul>
+</div>
+

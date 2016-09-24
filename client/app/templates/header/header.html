@@ -1,0 +1,29 @@
+<div class="header-warp" ng-controller="headerController as header">
+    <div ng-class="header.widescreen?'container-fluid':'container-fluid-mini'">
+        <ul class="header-operation header-operation-left">
+            <li class="header-operation-btn" ng-click="header.ChangeWidescreen()">
+                <a>
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+            <li class="header-operation-btn">
+                <a ng-click="">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="remind-number"></span>
+                </a>
+            </li>
+            <li class="header-operation-btn">
+                <a ng-click="">
+                    <i class="fa fa-television"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="header-operation header-operation-right">
+            <li class="header-operation-btn">
+                <a ng-click="">
+                    <i class="fa fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

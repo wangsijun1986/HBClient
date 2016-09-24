@@ -1,0 +1,1 @@
+var env = "local"; //DO NOT CHANGE THIS VALUE
